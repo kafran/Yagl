@@ -13,13 +13,12 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for i in 0 ..< 10 {
+        for i in 0..<10 {
             let newItem = Item(context: viewContext)
             newItem.name = "Item \(i)"
-            newItem.inCart = false
-            newItem.isArchived = false
+            newItem.status = Int16.random(in: 0...2)
             // Adds multiple random historical transactions to the Item
-            for h in 1 ..< Int.random(in: 1 ... 11) {
+            for h in 1..<Int.random(in: 1...11) {
                 let newTransaction = Transaction(context: viewContext)
                 newTransaction.item = newItem
                 newTransaction.price = Decimal(h) as NSDecimalNumber
