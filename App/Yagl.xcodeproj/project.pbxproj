@@ -16,6 +16,13 @@
 		8CB4816E2932913300B2675A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB4816B2932913300B2675A /* Persistence.swift */; };
 		8CB4816F2932913300B2675A /* Yagl.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CB4816C2932913300B2675A /* Yagl.xcdatamodeld */; };
 		8CB481722932913F00B2675A /* GroceryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481712932913F00B2675A /* GroceryListView.swift */; };
+		8CB481752934BB1000B2675A /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481742934BB1000B2675A /* Status.swift */; };
+		8CB4817B2934BCDE00B2675A /* Item+CoreDataProperties.sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481772934BCDE00B2675A /* Item+CoreDataProperties.sample.swift */; };
+		8CB4817D2934BCDE00B2675A /* Transaction+CoreDataProperties.sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481792934BCDE00B2675A /* Transaction+CoreDataProperties.sample.swift */; };
+		8CB4819029367F7100B2675A /* GroceryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB4818F29367F7100B2675A /* GroceryItemView.swift */; };
+		8CB481922936A2A600B2675A /* ChecklistToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481912936A2A600B2675A /* ChecklistToggleStyle.swift */; };
+		8CB481952936B29A00B2675A /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481932936B29A00B2675A /* Item+CoreDataClass.swift */; };
+		8CB481962936B29A00B2675A /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481942936B29A00B2675A /* Transaction+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +36,13 @@
 		8CB4816B2932913300B2675A /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		8CB4816D2932913300B2675A /* Yagl.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Yagl.xcdatamodel; sourceTree = "<group>"; };
 		8CB481712932913F00B2675A /* GroceryListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryListView.swift; sourceTree = "<group>"; };
+		8CB481742934BB1000B2675A /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		8CB481772934BCDE00B2675A /* Item+CoreDataProperties.sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.sample.swift"; sourceTree = SOURCE_ROOT; };
+		8CB481792934BCDE00B2675A /* Transaction+CoreDataProperties.sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.sample.swift"; sourceTree = SOURCE_ROOT; };
+		8CB4818F29367F7100B2675A /* GroceryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItemView.swift; sourceTree = "<group>"; };
+		8CB481912936A2A600B2675A /* ChecklistToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChecklistToggleStyle.swift; path = Yagl/ChecklistToggleStyle.swift; sourceTree = SOURCE_ROOT; };
+		8CB481932936B29A00B2675A /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8CB481942936B29A00B2675A /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +59,8 @@
 		8CB481452932900000B2675A = {
 			isa = PBXGroup;
 			children = (
+				8CB481772934BCDE00B2675A /* Item+CoreDataProperties.sample.swift */,
+				8CB481792934BCDE00B2675A /* Transaction+CoreDataProperties.sample.swift */,
 				8CB48165293290C700B2675A /* README.md */,
 				8CB48164293290C700B2675A /* LICENSE */,
 				8CB48168293290D900B2675A /* .gitignore */,
@@ -67,6 +83,7 @@
 				8CB481512932900000B2675A /* YaglApp.swift */,
 				8CB481702932913F00B2675A /* Views */,
 				8CB4816A2932913300B2675A /* Core Data */,
+				8CB481732934BAB900B2675A /* Models */,
 				8CB481552932900100B2675A /* Assets.xcassets */,
 				8CB481572932900100B2675A /* Preview Content */,
 			);
@@ -84,6 +101,8 @@
 		8CB4816A2932913300B2675A /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				8CB481932936B29A00B2675A /* Item+CoreDataClass.swift */,
+				8CB481942936B29A00B2675A /* Transaction+CoreDataClass.swift */,
 				8CB4816B2932913300B2675A /* Persistence.swift */,
 				8CB4816C2932913300B2675A /* Yagl.xcdatamodeld */,
 			);
@@ -94,8 +113,18 @@
 			isa = PBXGroup;
 			children = (
 				8CB481712932913F00B2675A /* GroceryListView.swift */,
+				8CB4818F29367F7100B2675A /* GroceryItemView.swift */,
+				8CB481912936A2A600B2675A /* ChecklistToggleStyle.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8CB481732934BAB900B2675A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8CB481742934BB1000B2675A /* Status.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,7 +200,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CB481952936B29A00B2675A /* Item+CoreDataClass.swift in Sources */,
+				8CB4817B2934BCDE00B2675A /* Item+CoreDataProperties.sample.swift in Sources */,
+				8CB481962936B29A00B2675A /* Transaction+CoreDataClass.swift in Sources */,
+				8CB4819029367F7100B2675A /* GroceryItemView.swift in Sources */,
 				8CB4816E2932913300B2675A /* Persistence.swift in Sources */,
+				8CB481752934BB1000B2675A /* Status.swift in Sources */,
+				8CB481922936A2A600B2675A /* ChecklistToggleStyle.swift in Sources */,
+				8CB4817D2934BCDE00B2675A /* Transaction+CoreDataProperties.sample.swift in Sources */,
 				8CB4816F2932913300B2675A /* Yagl.xcdatamodeld in Sources */,
 				8CB481522932900000B2675A /* YaglApp.swift in Sources */,
 				8CB481722932913F00B2675A /* GroceryListView.swift in Sources */,
@@ -311,6 +347,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,6 +377,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
