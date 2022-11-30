@@ -11,8 +11,13 @@ import SwiftUI
 struct YaglApp: App {
     var body: some Scene {
         WindowGroup {
-            GroceryListView()
-                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+            NavigationView {
+                GroceryListView()
+                    .environment(
+                        \.managedObjectContext,
+                        PersistenceController.shared.container.viewContext
+                    )
+            }
         }
     }
 }

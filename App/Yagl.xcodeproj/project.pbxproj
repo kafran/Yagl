@@ -23,6 +23,9 @@
 		8CB481922936A2A600B2675A /* ChecklistToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481912936A2A600B2675A /* ChecklistToggleStyle.swift */; };
 		8CB481952936B29A00B2675A /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481932936B29A00B2675A /* Item+CoreDataClass.swift */; };
 		8CB481962936B29A00B2675A /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481942936B29A00B2675A /* Transaction+CoreDataClass.swift */; };
+		8CB481982936B44500B2675A /* CoreDataChildContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481972936B44500B2675A /* CoreDataChildContext.swift */; };
+		8CB4819A2936BB6400B2675A /* SectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481992936BB6400B2675A /* SectionList.swift */; };
+		8CB4819C2937585900B2675A /* SectionCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB4819B2937585900B2675A /* SectionCart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		8CB481912936A2A600B2675A /* ChecklistToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChecklistToggleStyle.swift; path = Yagl/ChecklistToggleStyle.swift; sourceTree = SOURCE_ROOT; };
 		8CB481932936B29A00B2675A /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8CB481942936B29A00B2675A /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8CB481972936B44500B2675A /* CoreDataChildContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataChildContext.swift; path = Yagl/Views/CoreDataChildContext.swift; sourceTree = SOURCE_ROOT; };
+		8CB481992936BB6400B2675A /* SectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionList.swift; sourceTree = "<group>"; };
+		8CB4819B2937585900B2675A /* SectionCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 		8CB4816A2932913300B2675A /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				8CB481972936B44500B2675A /* CoreDataChildContext.swift */,
 				8CB481932936B29A00B2675A /* Item+CoreDataClass.swift */,
 				8CB481942936B29A00B2675A /* Transaction+CoreDataClass.swift */,
 				8CB4816B2932913300B2675A /* Persistence.swift */,
@@ -113,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				8CB481712932913F00B2675A /* GroceryListView.swift */,
+				8CB481992936BB6400B2675A /* SectionList.swift */,
+				8CB4819B2937585900B2675A /* SectionCart.swift */,
 				8CB4818F29367F7100B2675A /* GroceryItemView.swift */,
 				8CB481912936A2A600B2675A /* ChecklistToggleStyle.swift */,
 			);
@@ -201,10 +210,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CB481952936B29A00B2675A /* Item+CoreDataClass.swift in Sources */,
+				8CB4819A2936BB6400B2675A /* SectionList.swift in Sources */,
 				8CB4817B2934BCDE00B2675A /* Item+CoreDataProperties.sample.swift in Sources */,
 				8CB481962936B29A00B2675A /* Transaction+CoreDataClass.swift in Sources */,
 				8CB4819029367F7100B2675A /* GroceryItemView.swift in Sources */,
 				8CB4816E2932913300B2675A /* Persistence.swift in Sources */,
+				8CB481982936B44500B2675A /* CoreDataChildContext.swift in Sources */,
+				8CB4819C2937585900B2675A /* SectionCart.swift in Sources */,
 				8CB481752934BB1000B2675A /* Status.swift in Sources */,
 				8CB481922936A2A600B2675A /* ChecklistToggleStyle.swift in Sources */,
 				8CB4817D2934BCDE00B2675A /* Transaction+CoreDataProperties.sample.swift in Sources */,
