@@ -21,11 +21,11 @@ struct GroceryListView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 EditButton()
             }
-            ToolbarItem {
-                Button(action: { print("add item pressed") }) {
-                    Label("Add Item", systemImage: "plus")
-                }
-            }
+//            ToolbarItem {
+//                Button(action: { print("add item pressed") }) {
+//                    Label("Add Item", systemImage: "plus")
+//                }
+//            }
         }
     }
 }
