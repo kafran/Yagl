@@ -21,11 +21,15 @@ struct ListItem: View {
                 Text(item.nameString)
             }
             .toggleStyle(.checklist)
-            .sheet(isPresented: $isAddingToCart) {
+            .sheet(isPresented: $isAddingToCart, onDismiss: self.persistData) {
                 TransactionView(item: .init(editEntity: item))
                     .presentationDetents([.medium, .large])
             }
         }
+    }
+
+    private func persistData() {
+        PersistenceController.shared.save()
     }
 }
 

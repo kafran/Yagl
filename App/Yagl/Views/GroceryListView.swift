@@ -15,7 +15,7 @@ struct GroceryListView: View {
         List {
             SectionList()
             SectionCart()
-            // SectionArchived()
+            SectionArchived()
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -27,7 +27,7 @@ struct GroceryListView: View {
 //                }
 //            }
         }
-        .navigationTitle("Shopping")
+        .navigationTitle("Grocery List")
     }
 }
 

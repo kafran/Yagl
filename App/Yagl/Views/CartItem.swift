@@ -16,14 +16,27 @@ struct CartItem: View {
             Text(item.nameString)
         }
         .toggleStyle(.checklist)
-        .onChange(of: isInCart) {_ in
+        .onChange(of: isInCart) { _ in
             item.statusEnum = .list
             PersistenceController.shared.save()
+        }
+        .swipeActions {
+            Button {
+                self.archiveItems(item: item)
+            } label: {
+                Image(systemName: "tray.and.arrow.down")
+            }
+            .tint(.blue)
         }
 //            .sheet(isPresented: $isAddingToCart) {
 //                TransactionView(item: .init(editEntity: item))
 //                    .presentationDetents([.medium, .large])
 //            }
+    }
+
+    private func archiveItems(item: Item) {
+        item.statusEnum = .archived
+        PersistenceController.shared.save()
     }
 }
 

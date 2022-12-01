@@ -23,11 +23,22 @@ struct SectionList: View {
     @FocusState private var isFocused: Bool
 
     var body: some View {
-        Section(header: Text("Grocery List")) {
+        Section {
             ForEach(items) { item in
                 ListItem(item: item)
+                    .swipeActions {
+                        Button {
+                            self.archiveItems(item: item)
+                        } label: {
+                            Image(systemName: "tray.and.arrow.down")
+                        }.tint(.blue)
+                        Button(role: .destructive) {
+                            self.deleteItems(item: item)
+                        } label: {
+                            Image(systemName: "trash")
+                        }
+                    }
             }
-            .onDelete(perform: self.deleteItems)
             .onMove(perform: self.moveItems)
             HStack {
                 Image(systemName: "circle")
@@ -68,6 +79,20 @@ struct SectionList: View {
             offsets.map { items[$0] }.forEach(viewContext.delete)
             PersistenceController.shared.save()
         }
+    }
+
+    private func deleteItems(item: Item) {
+        withAnimation {
+            viewContext.delete(item)
+        }
+        PersistenceController.shared.save()
+    }
+
+    private func archiveItems(item: Item) {
+        withAnimation {
+            item.statusEnum = .archived
+        }
+        PersistenceController.shared.save()
     }
 
     private func moveItems(at offset: IndexSet, to destination: Int) {

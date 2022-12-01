@@ -30,6 +30,8 @@
 		8CB481A22938B4D500B2675A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481A12938B4D500B2675A /* Currency.swift */; };
 		8CB481A42938CC0300B2675A /* CoreDataChildContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481A32938CC0300B2675A /* CoreDataChildContext.swift */; };
 		8CB481A62938E9B500B2675A /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481A52938E9B500B2675A /* CartItem.swift */; };
+		8CB481A82938ED4600B2675A /* SectionArchived.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481A72938ED4600B2675A /* SectionArchived.swift */; };
+		8CB481AA2938EE9900B2675A /* ArchivedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481A92938EE9900B2675A /* ArchivedItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		8CB481A12938B4D500B2675A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		8CB481A32938CC0300B2675A /* CoreDataChildContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataChildContext.swift; sourceTree = "<group>"; };
 		8CB481A52938E9B500B2675A /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
+		8CB481A72938ED4600B2675A /* SectionArchived.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionArchived.swift; sourceTree = "<group>"; };
+		8CB481A92938EE9900B2675A /* ArchivedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 				8CB4818F29367F7100B2675A /* ListItem.swift */,
 				8CB4819B2937585900B2675A /* SectionCart.swift */,
 				8CB481A52938E9B500B2675A /* CartItem.swift */,
+				8CB481A72938ED4600B2675A /* SectionArchived.swift */,
+				8CB481A92938EE9900B2675A /* ArchivedItem.swift */,
 				8CB4819D293845E100B2675A /* TransactionView.swift */,
 				8CB4819F2938B20500B2675A /* TransactionForm.swift */,
 				8CB481912936A2A600B2675A /* ChecklistToggleStyle.swift */,
@@ -226,6 +232,7 @@
 				8CB4819E293845E100B2675A /* TransactionView.swift in Sources */,
 				8CB4817B2934BCDE00B2675A /* Item+CoreDataProperties.sample.swift in Sources */,
 				8CB481A62938E9B500B2675A /* CartItem.swift in Sources */,
+				8CB481A82938ED4600B2675A /* SectionArchived.swift in Sources */,
 				8CB481962936B29A00B2675A /* Transaction+CoreDataClass.swift in Sources */,
 				8CB4819029367F7100B2675A /* ListItem.swift in Sources */,
 				8CB4816E2932913300B2675A /* Persistence.swift in Sources */,
@@ -238,6 +245,7 @@
 				8CB481A22938B4D500B2675A /* Currency.swift in Sources */,
 				8CB4816F2932913300B2675A /* Yagl.xcdatamodeld in Sources */,
 				8CB481522932900000B2675A /* YaglApp.swift in Sources */,
+				8CB481AA2938EE9900B2675A /* ArchivedItem.swift in Sources */,
 				8CB481722932913F00B2675A /* GroceryListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
