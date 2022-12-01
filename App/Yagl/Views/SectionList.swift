@@ -36,6 +36,7 @@ struct SectionList: View {
                     .focused($isFocused)
                     .submitLabel(.done)
                     .onSubmit {
+                        guard !newItemName.isEmpty else { return }
                         addNewItem()
                     }
                 Button {
