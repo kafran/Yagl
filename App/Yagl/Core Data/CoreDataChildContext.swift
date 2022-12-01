@@ -11,7 +11,7 @@ import CoreData
 struct CoreDataChildContext<Entity: NSManagedObject> {
     let parentContext: NSManagedObjectContext
     let childContext: NSManagedObjectContext?
-    let entity: Entity
+    let childObject: Entity
 
     init(
         editEntity: Entity? = nil,
@@ -38,9 +38,9 @@ struct CoreDataChildContext<Entity: NSManagedObject> {
            let childObject = try? childContext
            .existingObject(with: editEntity.objectID) as? Entity
         {
-            entity = childObject
+            self.childObject = childObject
         } else {
-            entity = .init(context: childContext)
+            childObject = .init(context: childContext)
         }
     }
 }

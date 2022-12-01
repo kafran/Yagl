@@ -27,6 +27,7 @@ struct GroceryListView: View {
 //                }
 //            }
         }
+        .navigationTitle("Shopping")
     }
 }
 

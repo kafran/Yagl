@@ -50,7 +50,6 @@ struct SectionList: View {
                 .disabled(newItemName.isEmpty)
             }
         }
-        .headerProminence(.increased)
     }
 
     private func addNewItem() {

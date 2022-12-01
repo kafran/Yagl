@@ -22,8 +22,8 @@ struct GroceryItemView: View {
             }
             .toggleStyle(.checklist)
             .sheet(isPresented: $isAddingToCart) {
-                Text(item.nameString)
-                    .presentationDetents([.medium])
+                TransactionView(item: .init(editEntity: item))
+                    .presentationDetents([.medium, .large])
             }
         }
     }
