@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GroceryItemView: View {
+struct ListItem: View {
     @Environment(\.editMode) private var editMode
     @ObservedObject var item: Item
     @State private var isAddingToCart = false
@@ -31,6 +31,6 @@ struct GroceryItemView: View {
 
 struct GroceryItemView_Previews: PreviewProvider {
     static var previews: some View {
-        GroceryItemView(item: Item.example)
+        ListItem(item: Item.example)
     }
 }

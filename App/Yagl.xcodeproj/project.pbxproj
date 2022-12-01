@@ -19,7 +19,7 @@
 		8CB481752934BB1000B2675A /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481742934BB1000B2675A /* Status.swift */; };
 		8CB4817B2934BCDE00B2675A /* Item+CoreDataProperties.sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481772934BCDE00B2675A /* Item+CoreDataProperties.sample.swift */; };
 		8CB4817D2934BCDE00B2675A /* Transaction+CoreDataProperties.sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481792934BCDE00B2675A /* Transaction+CoreDataProperties.sample.swift */; };
-		8CB4819029367F7100B2675A /* GroceryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB4818F29367F7100B2675A /* GroceryItemView.swift */; };
+		8CB4819029367F7100B2675A /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB4818F29367F7100B2675A /* ListItem.swift */; };
 		8CB481922936A2A600B2675A /* ChecklistToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481912936A2A600B2675A /* ChecklistToggleStyle.swift */; };
 		8CB481952936B29A00B2675A /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481932936B29A00B2675A /* Item+CoreDataClass.swift */; };
 		8CB481962936B29A00B2675A /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481942936B29A00B2675A /* Transaction+CoreDataClass.swift */; };
@@ -29,6 +29,7 @@
 		8CB481A02938B20500B2675A /* TransactionForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB4819F2938B20500B2675A /* TransactionForm.swift */; };
 		8CB481A22938B4D500B2675A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481A12938B4D500B2675A /* Currency.swift */; };
 		8CB481A42938CC0300B2675A /* CoreDataChildContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481A32938CC0300B2675A /* CoreDataChildContext.swift */; };
+		8CB481A62938E9B500B2675A /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB481A52938E9B500B2675A /* CartItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +46,7 @@
 		8CB481742934BB1000B2675A /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		8CB481772934BCDE00B2675A /* Item+CoreDataProperties.sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.sample.swift"; sourceTree = SOURCE_ROOT; };
 		8CB481792934BCDE00B2675A /* Transaction+CoreDataProperties.sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.sample.swift"; sourceTree = SOURCE_ROOT; };
-		8CB4818F29367F7100B2675A /* GroceryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItemView.swift; sourceTree = "<group>"; };
+		8CB4818F29367F7100B2675A /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		8CB481912936A2A600B2675A /* ChecklistToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChecklistToggleStyle.swift; path = Yagl/ChecklistToggleStyle.swift; sourceTree = SOURCE_ROOT; };
 		8CB481932936B29A00B2675A /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8CB481942936B29A00B2675A /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		8CB4819F2938B20500B2675A /* TransactionForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionForm.swift; sourceTree = "<group>"; };
 		8CB481A12938B4D500B2675A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		8CB481A32938CC0300B2675A /* CoreDataChildContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataChildContext.swift; sourceTree = "<group>"; };
+		8CB481A52938E9B500B2675A /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +129,9 @@
 			children = (
 				8CB481712932913F00B2675A /* GroceryListView.swift */,
 				8CB481992936BB6400B2675A /* SectionList.swift */,
+				8CB4818F29367F7100B2675A /* ListItem.swift */,
 				8CB4819B2937585900B2675A /* SectionCart.swift */,
-				8CB4818F29367F7100B2675A /* GroceryItemView.swift */,
+				8CB481A52938E9B500B2675A /* CartItem.swift */,
 				8CB4819D293845E100B2675A /* TransactionView.swift */,
 				8CB4819F2938B20500B2675A /* TransactionForm.swift */,
 				8CB481912936A2A600B2675A /* ChecklistToggleStyle.swift */,
@@ -222,8 +225,9 @@
 				8CB4819A2936BB6400B2675A /* SectionList.swift in Sources */,
 				8CB4819E293845E100B2675A /* TransactionView.swift in Sources */,
 				8CB4817B2934BCDE00B2675A /* Item+CoreDataProperties.sample.swift in Sources */,
+				8CB481A62938E9B500B2675A /* CartItem.swift in Sources */,
 				8CB481962936B29A00B2675A /* Transaction+CoreDataClass.swift in Sources */,
-				8CB4819029367F7100B2675A /* GroceryItemView.swift in Sources */,
+				8CB4819029367F7100B2675A /* ListItem.swift in Sources */,
 				8CB4816E2932913300B2675A /* Persistence.swift in Sources */,
 				8CB4819C2937585900B2675A /* SectionCart.swift in Sources */,
 				8CB481752934BB1000B2675A /* Status.swift in Sources */,

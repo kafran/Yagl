@@ -25,7 +25,7 @@ struct SectionList: View {
     var body: some View {
         Section(header: Text("Grocery List")) {
             ForEach(items) { item in
-                GroceryItemView(item: item)
+                ListItem(item: item)
             }
             .onDelete(perform: self.deleteItems)
             .onMove(perform: self.moveItems)

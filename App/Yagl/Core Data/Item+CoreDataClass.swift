@@ -26,4 +26,8 @@ extension Item {
             status = newValue.rawValue
         }
     }
+    
+    var transactionArray: [Transaction] {
+        self.transaction?.array as? [Transaction] ?? []
+    }
 }
