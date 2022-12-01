@@ -8,16 +8,23 @@
 import SwiftUI
 
 struct GroceryItemView: View {
+    @Environment(\.editMode) private var editMode
     @ObservedObject var item: Item
     @State private var isAddingToCart = false
-    
+
     var body: some View {
-        Toggle(isOn: $isAddingToCart) {
+        if editMode?.wrappedValue.isEditing == true {
             TextField("Item", text: $item.nameString)
-        }
-        .toggleStyle(.checklist)
-        .sheet(isPresented: $isAddingToCart) {
-            Text(item.nameString)
+                .submitLabel(.done)
+        } else {
+            Toggle(isOn: $isAddingToCart) {
+                Text(item.nameString)
+            }
+            .toggleStyle(.checklist)
+            .sheet(isPresented: $isAddingToCart) {
+                Text(item.nameString)
+                    .presentationDetents([.medium])
+            }
         }
     }
 }
