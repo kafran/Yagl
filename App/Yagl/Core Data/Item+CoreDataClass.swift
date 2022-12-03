@@ -30,4 +30,15 @@ extension Item {
     var transactionArray: [Transaction] {
         self.transaction?.array as? [Transaction] ?? []
     }
+    
+    var isInCart: Bool {
+        get { self.statusEnum == .cart }
+        set {
+            if newValue {
+                self.statusEnum = .cart
+            } else {
+                self.statusEnum = .list
+            }
+        }
+    }
 }

@@ -11,18 +11,38 @@ struct TransactionForm: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var item: Item
     @ObservedObject var transaction: Transaction
+    
+    init(item: Item, transaction: Transaction) {
+        self.item = item
+        
+        if let lastTransaction = item.transactionArray.last {
+            transaction.quantity = lastTransaction.quantity
+            transaction.priceDecimal = lastTransaction.priceDecimal
+            self.transaction = transaction
+        } else {
+            self.transaction = transaction
+        }
+    }
 
-    var items: String {
+    @State var isHistoryExpanded = false
+
+//    private var transactionHistory: [Transaction] {
+//        guard let parentItem = try? item.parentContext.existingObject(with:
+//        item.childObject.objectID) as? Item else { return [] }
+//        return parentItem.transactionArray
+//    }
+//
+    private var items: String {
         transaction.quantity <= 1 ? "item" : "items"
     }
 
-    var total: Double {
+    private var total: Double {
         // FIXME: nil-coalescing
         Double(transaction.quantity) * (transaction.price?.doubleValue ?? 0.0)
     }
 
     var body: some View {
-        Form {
+        List {
             Section {
                 Stepper(
                     "\(transaction.quantity) \(items)",
@@ -37,16 +57,39 @@ struct TransactionForm: View {
                 .keyboardType(.decimalPad)
                 .submitLabel(.done)
             }
-
-            HStack {
-                Text("Total")
-                Spacer()
-                Text(self.total, format: .currency(code: Currency.code))
+            Section {
+                HStack {
+                    Text("Total")
+                    Spacer()
+                    Text(self.total, format: .currency(code: Currency.code))
+                }
+            }
+            Section {
+                DisclosureGroup(isExpanded: $isHistoryExpanded) {
+                    ForEach(item.transactionArray.reversed()) { transaction in
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text("\(transaction.quantity)")
+                                Image(systemName: "multiply")
+                                Text(
+                                    transaction.priceDecimal,
+                                    format: .currency(code: Currency.code)
+                                )
+                            }
+                            Text(
+                                transaction.date?
+                                    .formatted(date: .abbreviated, time: .shortened) ??
+                                    ""
+                            )
+                            .font(.caption)
+                        }
+                    }
+                } label: {
+                    Label("History", systemImage: "calendar.badge.clock")
+                        .badge(item.transactionArray.count)
+                }
             }
         }
-        .padding()
-        .navigationTitle("\(item.nameString)")
-        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
@@ -66,6 +109,8 @@ struct TransactionForm: View {
                 }
             }
         }
+        .navigationTitle("\(item.nameString)")
+        .navigationBarTitleDisplayMode(.inline)
     }
 
     private func save() {

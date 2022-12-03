@@ -16,7 +16,7 @@ struct ArchivedItem: View {
         {
             return transactionDate.formatted(date: .abbreviated, time: .omitted)
         } else {
-            return "Unknown Date"
+            return "never bought."
         }
     }
 

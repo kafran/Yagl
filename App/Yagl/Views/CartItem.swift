@@ -9,17 +9,12 @@ import SwiftUI
 
 struct CartItem: View {
     @ObservedObject var item: Item
-    @State private var isInCart = true
 
     var body: some View {
-        Toggle(isOn: $isInCart) {
+        Toggle(isOn: $item.isInCart) {
             Text(item.nameString)
         }
         .toggleStyle(.checklist)
-        .onChange(of: isInCart) { _ in
-            item.statusEnum = .list
-            PersistenceController.shared.save()
-        }
         .swipeActions {
             Button {
                 self.archiveItems(item: item)

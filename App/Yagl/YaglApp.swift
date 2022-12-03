@@ -20,6 +20,7 @@ struct YaglApp: App {
                         PersistenceController.shared.container.viewContext
                     )
             }
+            .navigationViewStyle(.stack)
         }
         .onChange(of: scenePhase) {_ in
             PersistenceController.shared.save()

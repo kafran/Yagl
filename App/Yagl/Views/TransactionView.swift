@@ -20,8 +20,8 @@ struct TransactionView: View {
     }
 }
 
-// struct TransactionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TransactionView()
-//    }
-// }
+struct TransactionView_Previews: PreviewProvider {
+    static var previews: some View {
+        TransactionView(item: .init(editEntity: Item.example))
+    }
+}
