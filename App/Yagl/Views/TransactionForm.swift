@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct TransactionForm: View {
-    @Environment(\.dismiss) private var dismiss
     @ObservedObject var item: Item
     @ObservedObject var transaction: Transaction
-    
+
     init(item: Item, transaction: Transaction) {
         self.item = item
-        
+
         if let lastTransaction = item.transactionArray.last {
             transaction.quantity = lastTransaction.quantity
             transaction.priceDecimal = lastTransaction.priceDecimal
@@ -24,14 +23,19 @@ struct TransactionForm: View {
         }
     }
 
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.dismiss) private var dismiss
     @State var isHistoryExpanded = false
 
-//    private var transactionHistory: [Transaction] {
-//        guard let parentItem = try? item.parentContext.existingObject(with:
-//        item.childObject.objectID) as? Item else { return [] }
-//        return parentItem.transactionArray
-//    }
-//
+    private var transactionsOnViewContext: [Transaction] {
+        if let itemOnViewContext = try? viewContext
+            .existingObject(with: item.objectID) as? Item
+        {
+            return itemOnViewContext.transactionArray.reversed()
+        }
+        return []
+    }
+
     private var items: String {
         transaction.quantity <= 1 ? "item" : "items"
     }
@@ -66,7 +70,7 @@ struct TransactionForm: View {
             }
             Section {
                 DisclosureGroup(isExpanded: $isHistoryExpanded) {
-                    ForEach(item.transactionArray.reversed()) { transaction in
+                    ForEach(transactionsOnViewContext) { transaction in
                         VStack(alignment: .leading) {
                             HStack {
                                 Text("\(transaction.quantity)")
@@ -84,6 +88,7 @@ struct TransactionForm: View {
                             .font(.caption)
                         }
                     }
+                    .onDelete(perform: self.deleteItems)
                 } label: {
                     Label("History", systemImage: "calendar.badge.clock")
                         .badge(item.transactionArray.count)
@@ -127,6 +132,14 @@ struct TransactionForm: View {
             try transaction.managedObjectContext?.save()
         } catch {
             print("Something went wrong while saving the child context: \(error)")
+        }
+    }
+
+    private func deleteItems(at offsets: IndexSet) {
+        withAnimation {
+            offsets.map { transactionsOnViewContext[$0] }
+                .forEach(viewContext.delete)
+            PersistenceController.shared.save()
         }
     }
 }
